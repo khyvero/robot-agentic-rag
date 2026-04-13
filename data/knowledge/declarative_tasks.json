@@ -1,0 +1,260 @@
+[
+  {
+    "_comment": "=== GENERIC TEMPLATES (Tier 1 Generalization) ===",
+    "mission_name": "Pick Object",
+    "intent_keywords": ["pick up", "grab", "hold", "get", "take"],
+    "required_slots": ["target_object"],
+    "logic_steps": [
+      "Pick up '{target_object}'"
+    ]
+  },
+  {
+    "mission_name": "Place Object",
+    "intent_keywords": ["place", "put down", "set", "drop", "position"],
+    "required_slots": ["target_object", "x", "y"],
+    "logic_steps": [
+      "Place '{target_object}' on a free spot near x={x}, y={y}"
+    ]
+  },
+  {
+    "mission_name": "Place in Area",
+    "intent_keywords": ["place in area", "put in zone", "quarantine", "store in region", "restrict to box"],
+    "required_slots": ["target_object", "min_x", "max_x", "min_y", "max_y"],
+    "logic_steps": [
+      "Place '{target_object}' in area min_x={min_x}, max_x={max_x}, min_y={min_y}, max_y={max_y}"
+    ]
+  },
+  {
+    "mission_name": "Move Object",
+    "intent_keywords": ["move", "relocate", "transfer", "shift"],
+    "required_slots": ["target_object"],
+    "logic_steps": [
+      "Pick up '{target_object}'",
+      "Place '{target_object}' on a free spot near x=200, y=0"
+    ]
+  },
+  {
+    "mission_name": "Disposal",
+    "intent_keywords": ["dispose", "trash", "throw away", "discard", "move to bin", "put in bin", "throw in bin", "place in trash"],
+    "required_slots": ["target_object"],
+    "logic_steps": [
+      "Pick up '{target_object}'",
+      "Place '{target_object}' on 'biohazard_bin'"
+    ]
+  },
+  {
+    "mission_name": "Move Home",
+    "intent_keywords": ["go home", "reset position", "stop", "abort"],
+    "required_slots": [],
+    "logic_steps": [
+      "Move Home"
+    ]
+  },
+  {
+    "mission_name": "Safety Clear",
+    "intent_keywords": ["drop everything", "release", "clear gripper", "safety check"],
+    "required_slots": [],
+    "logic_steps": [
+      "Ensure Gripper Empty",
+      "Move Home"
+    ]
+  },
+  {
+    "mission_name": "Wait",
+    "intent_keywords": ["wait", "pause", "hold on", "delay"],
+    "required_slots": ["seconds"],
+    "logic_steps": [
+      "Wait for {seconds} seconds"
+    ]
+  },
+  {
+    "mission_name": "Pour",
+    "intent_keywords": ["pour", "transfer liquid", "decant", "add"],
+    "required_slots": ["source_object", "destination_object"],
+    "logic_steps": [
+      "Pick up '{source_object}'",
+      "Pour into '{destination_object}'",
+      "Place '{source_object}' on a free spot near x=200, y=200"
+    ]
+  },
+  {
+    "mission_name": "Shake",
+    "intent_keywords": ["shake", "mix vigorously", "agitate"],
+    "required_slots": ["target_object"],
+    "logic_steps": [
+      "Pick up '{target_object}'",
+      "Shake '{target_object}'",
+      "Place '{target_object}' on a free spot near x=200, y=200"
+    ]
+  },
+  {
+    "mission_name": "Swirl",
+    "intent_keywords": ["swirl", "mix gently", "stir"],
+    "required_slots": ["target_object"],
+    "logic_steps": [
+      "Pick up '{target_object}'",
+      "Swirl '{target_object}'",
+      "Place '{target_object}' on a free spot near x=200, y=200"
+    ]
+  },
+  {
+    "_comment": "=== COMPOUND RECIPES (Specific Logic Sequences) ===",
+    "mission_name": "Neutralization",
+    "intent_keywords": ["neutralize acid", "mix acid base", "neutralization experiment"],
+    "logic_steps": [
+      "Pick up 'test_tube_hydrochloric_acid'",
+      "Pour into 'beaker_water'",
+      "Place 'test_tube_hydrochloric_acid' on a free spot near x=300, y=100",
+      "Pick up 'test_tube_sodium_hydroxide'",
+      "Pour into 'beaker_water'",
+      "Place 'test_tube_sodium_hydroxide' on a free spot near x=350, y=100",
+      "Pick up 'beaker_water'",
+      "Swirl 'beaker_water'",
+      "Place 'beaker_water' on a free spot near x=250, y=200"
+    ]
+  },
+  {
+    "mission_name": "DNA Extraction",
+    "intent_keywords": ["extract dna", "process dna sample", "dna protocol"],
+    "logic_steps": [
+      "Pick up 'test_tube_blood'",
+      "Shake 'test_tube_blood'",
+      "Pour into 'test_tube_DNA'",
+      "Place 'test_tube_blood' on a free spot near x=100, y=100",
+      "Pick up 'dropper_Phenolphtalein'",
+      "Pour into 'test_tube_DNA'",
+      "Place 'dropper_Phenolphtalein' on a free spot near x=150, y=100",
+      "Pick up 'test_tube_DNA'",
+      "Swirl 'test_tube_DNA'",
+      "Place 'test_tube_DNA' on a free spot near x=200, y=100"
+    ]
+  },
+  {
+    "mission_name": "Waste Disposal",
+    "intent_keywords": ["clean up", "dispose all chemicals", "clear workspace"],
+    "logic_steps": [
+      "Pick up 'test_tube_phenol'",
+      "Place 'test_tube_phenol' on 'biohazard_bin'",
+      "Pick up 'test_tube_hydrochloric_acid'",
+      "Place 'test_tube_hydrochloric_acid' on 'biohazard_bin'",
+      "Pick up 'test_tube_sodium_hydroxide'",
+      "Place 'test_tube_sodium_hydroxide' on 'biohazard_bin'",
+      "Ensure Gripper Empty",
+      "Move Home"
+    ]
+  },
+  {
+    "mission_name": "Water Transfer",
+    "intent_keywords": ["distribute water", "fill tubes", "prepare samples"],
+    "logic_steps": [
+      "Pick up 'beaker_water'",
+      "Pour into 'test_tube_empty'",
+      "Pour into 'test_tube_phenol'",
+      "Place 'beaker_water' on a free spot near x=200, y=200",
+      "Pick up 'test_tube_empty'",
+      "Shake 'test_tube_empty'",
+      "Place 'test_tube_empty' on a free spot near x=250, y=200"
+    ]
+  },
+  {
+    "mission_name": "Phenol Handling",
+    "intent_keywords": ["handle phenol", "mix phenol", "hazardous mix"],
+    "logic_steps": [
+      "Pick up 'test_tube_phenol'",
+      "Shake 'test_tube_phenol'",
+      "Swirl 'test_tube_phenol'",
+      "Pour into 'beaker_water'",
+      "Place 'test_tube_phenol' on 'biohazard_bin'"
+    ]
+  },
+  {
+    "mission_name": "Sample Analysis",
+    "intent_keywords": ["analyze blood", "inspect sample", "blood test"],
+    "logic_steps": [
+      "Pick up 'test_tube_blood'",
+      "Swirl 'test_tube_blood'",
+      "Place 'test_tube_blood' on a free spot near x=400, y=100",
+      "Pick up 'dropper_Phenolphtalein'",
+      "Pour into 'test_tube_blood'",
+      "Place 'dropper_Phenolphtalein' on a free spot near x=450, y=100",
+      "Pick up 'test_tube_blood'",
+      "Shake 'test_tube_blood'",
+      "Place 'test_tube_blood' on a free spot near x=400, y=100"
+    ]
+  },
+  {
+    "mission_name": "Lab Setup",
+    "intent_keywords": ["setup lab", "organize bench", "prepare station"],
+    "logic_steps": [
+      "Pick up 'bunsen_burner'",
+      "Place 'bunsen_burner' on a free spot near x=100, y=300",
+      "Pick up 'beaker_water'",
+      "Place 'beaker_water' on a free spot near x=150, y=300",
+      "Pick up 'test_tube_empty'",
+      "Place 'test_tube_empty' on a free spot near x=200, y=300",
+      "Move Home"
+    ]
+  },
+  {
+    "mission_name": "Heat Reaction",
+    "intent_keywords": ["heat sample", "burn reaction", "bunsen task"],
+    "logic_steps": [
+      "Pick up 'bunsen_burner'",
+      "Place 'bunsen_burner' on a free spot near x=300, y=300",
+      "Pick up 'test_tube_DNA'",
+      "Place 'test_tube_DNA' on a free spot near x=300, y=350",
+      "Move Home"
+    ]
+  },
+  {
+    "mission_name": "Serial Dilution",
+    "intent_keywords": ["serial dilution", "stepwise mix", "dilute chain"],
+    "logic_steps": [
+      "Pick up 'beaker_water'",
+      "Pour into 'test_tube_empty'",
+      "Place 'beaker_water' on a free spot near x=100, y=100",
+      "Pick up 'test_tube_empty'",
+      "Pour into 'test_tube_hydrochloric_acid'",
+      "Place 'test_tube_empty' on a free spot near x=150, y=100"
+    ]
+  },
+  {
+    "mission_name": "Acid Base Mix",
+    "intent_keywords": ["mix hcl naoh", "create salt water"],
+    "logic_steps": [
+      "Pick up 'test_tube_hydrochloric_acid'",
+      "Pour into 'test_tube_empty'",
+      "Place 'test_tube_hydrochloric_acid' on a free spot near x=100, y=0",
+      "Pick up 'test_tube_sodium_hydroxide'",
+      "Pour into 'test_tube_empty'",
+      "Place 'test_tube_sodium_hydroxide' on a free spot near x=150, y=0",
+      "Pick up 'test_tube_empty'",
+      "Swirl 'test_tube_empty'",
+      "Place 'test_tube_empty' on a free spot near x=200, y=0"
+    ]
+  },
+  {
+    "mission_name": "pH Test",
+    "intent_keywords": ["test ph", "check acidity", "phenolphthalein test", "add indicator"],
+    "logic_steps": [
+      "Pick up 'dropper_Phenolphtalein'",
+      "Pour into 'beaker_water'",
+      "Place 'dropper_Phenolphtalein' on a free spot near x=450, y=100",
+      "Pick up 'beaker_water'",
+      "Swirl 'beaker_water'",
+      "Place 'beaker_water' on a free spot near x=200, y=200"
+    ]
+  },
+  {
+    "mission_name": "Heat Water",
+    "intent_keywords": ["boil water", "heat water", "warm up beaker"],
+    "logic_steps": [
+      "Pick up 'beaker_water'",
+      "Place 'beaker_water' on 'bunsen_burner'",
+      "Move Home",
+      "Wait for 10 seconds",
+      "Pick up 'beaker_water'",
+      "Place 'beaker_water' on a free spot near x=150, y=300"
+    ]
+  }
+]

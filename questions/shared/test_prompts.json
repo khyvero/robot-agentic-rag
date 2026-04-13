@@ -1,0 +1,704 @@
+{
+  "description": "Test prompts for RQ1+RQ2 Combined Test Suite - 40 prompts total (10 per category) with expected validations",
+  "test_cases": [
+    {
+      "id": 1,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Pick Action",
+      "user_prompt": "Pick up test_tube_blood",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Home Return",
+      "user_prompt": "Return to home position",
+      "expected_actions": [
+        "move_home"
+      ],
+      "expected_objects": []
+    },
+    {
+      "id": 3,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Gripper Clear",
+      "user_prompt": "Ensure gripper is empty",
+      "expected_actions": [
+        "ensure_gripper_empty"
+      ],
+      "expected_objects": []
+    },
+    {
+      "id": 4,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Pick Different Object",
+      "user_prompt": "Pick up beaker_water",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Pick Flask",
+      "user_prompt": "Pick up flask_buffer",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "flask_buffer"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Pick Tube",
+      "user_prompt": "Pick up test_tube_phenol",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_phenol"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Wait Action",
+      "user_prompt": "Wait for 3 seconds",
+      "expected_actions": [
+        "wait"
+      ],
+      "expected_objects": []
+    },
+    {
+      "id": 8,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Pick Hydrochloric Acid",
+      "user_prompt": "Pick up test_tube_hydrochloric_acid",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_hydrochloric_acid"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Pick Sodium Hydroxide",
+      "user_prompt": "Pick up test_tube_sodium_hydroxide",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_sodium_hydroxide"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "simple",
+      "complexity": "low",
+      "title": "Simple Pick Reagent",
+      "user_prompt": "Pick up test_tube_reagent",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_reagent"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Pick and Place",
+      "user_prompt": "Pick up test_tube_blood and place it in biohazard_bin",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood",
+        "biohazard_bin"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Pour Action",
+      "user_prompt": "Pour test_tube_phenol into beaker_water",
+      "expected_actions": [
+        "pick",
+        "pour",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_phenol",
+        "beaker_water"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Shake Action",
+      "user_prompt": "Shake test_tube_blood for 5 seconds",
+      "expected_actions": [
+        "pick",
+        "shake",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood"
+      ]
+    },
+    {
+      "id": 14,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Swirl Action",
+      "user_prompt": "Swirl beaker_water gently",
+      "expected_actions": [
+        "pick",
+        "swirl",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water"
+      ]
+    },
+    {
+      "id": 15,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Multi-Object Disposal",
+      "user_prompt": "Dispose test_tube_phenol and test_tube_hydrochloric_acid in biohazard_bin",
+      "expected_actions": [
+        "pick",
+        "place",
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_phenol",
+        "test_tube_hydrochloric_acid",
+        "biohazard_bin"
+      ]
+    },
+    {
+      "id": 16,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Pour and Shake",
+      "user_prompt": "Pour test_tube_sodium_hydroxide into beaker_water then shake the beaker",
+      "expected_actions": [
+        "pick",
+        "pour",
+        "pick",
+        "shake",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_sodium_hydroxide",
+        "beaker_water"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Transfer Liquid",
+      "user_prompt": "Transfer liquid from test_tube_blood into beaker_water",
+      "expected_actions": [
+        "pick",
+        "pour",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood",
+        "beaker_water"
+      ]
+    },
+    {
+      "id": 18,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Pick, Swirl, Place",
+      "user_prompt": "Pick up test_tube_reagent, swirl it, then place it back",
+      "expected_actions": [
+        "pick",
+        "swirl",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_reagent"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Sequential Pours",
+      "user_prompt": "Pour test_tube_phenol into beaker_water, then pour test_tube_sodium_hydroxide into the same beaker",
+      "expected_actions": [
+        "pick",
+        "pour",
+        "pick",
+        "pour",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_phenol",
+        "test_tube_sodium_hydroxide",
+        "beaker_water"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "compound",
+      "complexity": "medium",
+      "title": "Compound - Clean Workspace",
+      "user_prompt": "Clean up workspace by moving all test tubes to biohazard_bin",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "biohazard_bin"
+      ]
+    },
+    {
+      "id": 21,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Exact Coordinates",
+      "user_prompt": "Place test_tube_blood at exact coordinates x=200, y=300",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood"
+      ],
+      "expected_coords": {
+        "x": 200,
+        "y": 300
+      }
+    },
+    {
+      "id": 22,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Speed Specification",
+      "user_prompt": "Pick up test_tube_phenol at simulation speed 3",
+      "expected_actions": [
+        "pick",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_phenol"
+      ],
+      "expected_speed": 3
+    },
+    {
+      "id": 23,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Area Placement",
+      "user_prompt": "Place test_tube_blood in area bounded by x from -100 to 100, y from -100 to 100",
+      "expected_actions": [
+        "pick",
+        "place_in_area",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood"
+      ],
+      "expected_area": {
+        "min_x": -100,
+        "max_x": 100,
+        "min_y": -100,
+        "max_y": 100
+      }
+    },
+    {
+      "id": 24,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Negative Coordinates",
+      "user_prompt": "Place beaker_water at coordinates x=-400, y=-500",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water"
+      ],
+      "expected_coords": {
+        "x": -400,
+        "y": -500
+      }
+    },
+    {
+      "id": 25,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Edge of Workspace",
+      "user_prompt": "Place test_tube_reagent at the edge of workspace at coordinates x=750, y=750",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_reagent"
+      ],
+      "expected_coords": {
+        "x": 750,
+        "y": 750
+      }
+    },
+    {
+      "id": 26,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Slow Speed",
+      "user_prompt": "Move test_tube_hydrochloric_acid to biohazard_bin at slowest speed",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_hydrochloric_acid",
+        "biohazard_bin"
+      ],
+      "expected_speed": 5
+    },
+    {
+      "id": 27,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Fast Speed",
+      "user_prompt": "Pick up flask_buffer and move it quickly at speed 1",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "flask_buffer"
+      ],
+      "expected_speed": 1
+    },
+    {
+      "id": 28,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Specific Wait Duration",
+      "user_prompt": "Wait for exactly 10 seconds before proceeding",
+      "expected_actions": [
+        "wait"
+      ],
+      "expected_objects": [],
+      "expected_duration": 10
+    },
+    {
+      "id": 29,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Centered Placement",
+      "user_prompt": "Place test_tube_sodium_hydroxide at the center of workspace at coordinates x=0, y=0",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_sodium_hydroxide"
+      ],
+      "expected_coords": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": 30,
+      "category": "constraint",
+      "complexity": "high",
+      "title": "Constraint - Multiple Coordinates",
+      "user_prompt": "Place test_tube_blood at x=100, y=200, then place test_tube_phenol at x=-100, y=-200",
+      "expected_actions": [
+        "pick",
+        "place",
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood",
+        "test_tube_phenol"
+      ]
+    },
+    {
+      "id": 31,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Spectroscopy Preparation",
+      "user_prompt": "Prepare spectroscopy sample: first pick up beaker_water, then pour test_tube_reagent into it, next add flask_buffer for dilution, swirl the mixture gently for 5 seconds, wait for 10 seconds to settle, then place the beaker at coordinates (300, 300) for analysis",
+      "expected_actions": [
+        "pick",
+        "pour",
+        "pick",
+        "pour",
+        "swirl",
+        "wait",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water",
+        "test_tube_reagent",
+        "flask_buffer"
+      ]
+    },
+    {
+      "id": 32,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Density Gradient",
+      "user_prompt": "Create density gradient by layering test_tube_phenol at bottom of beaker_water followed by flask_buffer",
+      "expected_actions": [
+        "pick",
+        "pour",
+        "pick",
+        "pour",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_phenol",
+        "beaker_water",
+        "flask_buffer"
+      ]
+    },
+    {
+      "id": 33,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Calibration Procedure",
+      "user_prompt": "Perform system calibration by sequentially testing each gripper position with test_tube_blood",
+      "expected_actions": [
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood"
+      ]
+    },
+    {
+      "id": 34,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Sample Mixing Protocol",
+      "user_prompt": "Execute comprehensive mixing protocol: first pick up beaker_water and place it at coordinates (200, 200), then pour test_tube_blood into the beaker, next add test_tube_reagent to the mixture, shake vigorously for 30 seconds, wait 15 seconds for chemical reaction, swirl gently for 5 seconds, and finally return to home position",
+      "expected_actions": [
+        "pick",
+        "place",
+        "pick",
+        "pour",
+        "pick",
+        "pour",
+        "shake",
+        "wait",
+        "swirl",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water",
+        "test_tube_blood",
+        "test_tube_reagent"
+      ]
+    },
+    {
+      "id": 35,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Titration Setup",
+      "user_prompt": "Set up titration experiment: first prepare beaker_water as the titration vessel and place it at coordinates (0, 0), then carefully pick up test_tube_sodium_hydroxide and pour it into the beaker as analyte, swirl gently for 3 seconds, wait 5 seconds for stabilization, now pick up test_tube_hydrochloric_acid as titrant and place it at coordinates (100, 100) ready for addition, then pour the acid slowly into the beaker, wait 10 seconds for reaction completion",
+      "expected_actions": [
+        "pick",
+        "place",
+        "pick",
+        "pour",
+        "swirl",
+        "wait",
+        "pick",
+        "place",
+        "pick",
+        "pour",
+        "wait",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water",
+        "test_tube_sodium_hydroxide",
+        "test_tube_hydrochloric_acid"
+      ]
+    },
+    {
+      "id": 36,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Precipitation Reaction",
+      "user_prompt": "Initiate precipitation reaction: first pick up beaker_water and place at coordinates (250, 250), then add test_tube_phenol to the beaker, swirl gently for 5 seconds to mix, wait 8 seconds for dissolution, now slowly pour test_tube_sodium_hydroxide into the mixture, shake the beaker for 10 seconds to ensure thorough mixing, wait 20 seconds for precipitation to occur, then place the beaker in biohazard_bin for disposal",
+      "expected_actions": [
+        "pick",
+        "place",
+        "pick",
+        "pour",
+        "swirl",
+        "wait",
+        "pick",
+        "pour",
+        "pick",
+        "shake",
+        "wait",
+        "pick",
+        "place",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water",
+        "test_tube_phenol",
+        "test_tube_sodium_hydroxide",
+        "biohazard_bin"
+      ]
+    },
+    {
+      "id": 37,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Temperature Equilibration",
+      "user_prompt": "Allow samples to reach thermal equilibrium by leaving test_tube_blood and test_tube_reagent undisturbed for 15 seconds",
+      "expected_actions": [
+        "wait",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood",
+        "test_tube_reagent"
+      ]
+    },
+    {
+      "id": 38,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Serial Dilution",
+      "user_prompt": "Perform serial dilution: first pick up beaker_water as vessel 1 and place at (100, 0), pour half of test_tube_reagent into it, then add flask_buffer for 1:2 dilution, shake for 5 seconds, pick up another beaker and place at (200, 0), pour from vessel 1 into it, add more flask_buffer for 1:4 dilution, shake for 5 seconds, pick up a third beaker and place at (300, 0), pour from vessel 2, add flask_buffer for 1:8 dilution, shake for 5 seconds, wait 10 seconds for equilibration",
+      "expected_actions": [
+        "pick",
+        "place",
+        "pick",
+        "pour",
+        "pick",
+        "pour",
+        "shake",
+        "pick",
+        "place",
+        "pour",
+        "pick",
+        "pour",
+        "shake",
+        "pick",
+        "place",
+        "pour",
+        "pick",
+        "pour",
+        "shake",
+        "wait",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water",
+        "test_tube_reagent",
+        "flask_buffer"
+      ]
+    },
+    {
+      "id": 39,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Quality Control Check",
+      "user_prompt": "Conduct quality control by inspecting test_tube_blood color, then swirling gently to check viscosity",
+      "expected_actions": [
+        "pick",
+        "swirl",
+        "move_home"
+      ],
+      "expected_objects": [
+        "test_tube_blood"
+      ]
+    },
+    {
+      "id": 40,
+      "category": "novel",
+      "complexity": "high",
+      "title": "Novel - Extraction Protocol",
+      "user_prompt": "Perform liquid-liquid extraction: first prepare beaker_water as extraction vessel and place at coordinates (150, 150), then add test_tube_blood as aqueous phase, swirl gently for 3 seconds, now add test_tube_phenol as organic phase, shake vigorously for 30 seconds for thorough mixing, wait 45 seconds for phase separation, carefully pick up the beaker and place at coordinates (400, 400) for observation, wait another 30 seconds for complete separation, then move to home position",
+      "expected_actions": [
+        "pick",
+        "place",
+        "pick",
+        "pour",
+        "swirl",
+        "pick",
+        "pour",
+        "pick",
+        "shake",
+        "wait",
+        "pick",
+        "place",
+        "wait",
+        "move_home"
+      ],
+      "expected_objects": [
+        "beaker_water",
+        "test_tube_blood",
+        "test_tube_phenol"
+      ]
+    }
+  ]
+}

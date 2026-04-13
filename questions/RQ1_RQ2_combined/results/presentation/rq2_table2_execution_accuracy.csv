@@ -1,0 +1,5 @@
+Task Category,Success Rate (%),Collision-Free (%),Kinematic Feasibility (%)
+Simple Task (Single-step),100.0,100.0,100.0
+Compound tasks (Multi-step),100.0,100.0,100.0
+Constrained Task,90.0,100.0,90.0
+Novel Task,90.0,100.0,100.0

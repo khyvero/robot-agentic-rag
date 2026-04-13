@@ -1,0 +1,5 @@
+robodk
+ollama
+chromadb
+pydantic
+instructor

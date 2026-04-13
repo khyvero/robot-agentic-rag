@@ -1,0 +1,110 @@
+[
+  {
+    "function_signature": "pick(target_obj_name: str)",
+    "action_name": "pick",
+    "action_keywords": ["pick", "pick up", "grab", "take", "get", "hold", "lift", "grasp"],
+    "description": "Picks up a specific object by name. Automatically handles path planning and obstacle removal.",
+    "constraints": {
+        "target_obj_name": "Must be a valid object name in the simulation (e.g., 'Cube 1', 'Red Cube')."
+    },
+    "safety_critical": true,
+    "example_usage": ["pick('test_tube_blood')", "pick('beaker_water')"]
+  },
+  {
+    "function_signature": "place(destination_obj_name: str = None, destination_coords: dict = {'x': 0, 'y': 0})",
+    "action_name": "place",
+    "action_keywords": ["place", "put", "put down", "drop", "set down", "position", "set"],
+    "description": "Places the currently held object. If 'destination_obj_name' is provided, places ON TOP of that object. If not, places at 'destination_coords'.",
+    "constraints": {
+        "x_limit": [-800, 800],
+        "y_limit": [-800, 800]
+    },
+    "safety_critical": true,
+    "example_usage": ["place('biohazard_bin')", "place(None, {'x': 100, 'y': 200})"]
+  },
+  {
+    "function_signature": "place_free_spot(destination_obj_name: str = None, destination_coords: dict = {'x': 0, 'y': 0})",
+    "action_name": "place_free_spot",
+    "action_keywords": ["place freely", "find spot", "avoid stacking", "place separately", "place beside"],
+    "description": "Places the object NEAR the target or coordinates, ensuring it does not stack on top of anything. Useful for organizing items.",
+    "constraints": {
+        "x_limit": [-800, 800],
+        "y_limit": [-800, 800]
+    },
+    "safety_critical": true,
+    "example_usage": ["place_free_spot('biohazard_bin')", "place_free_spot(None, {'x': 100, 'y': 200})"]
+  },
+  {
+    "function_signature": "move_home()",
+    "action_name": "move_home",
+    "action_keywords": ["move home", "return", "reset position", "go to start", "home position"],
+    "description": "Moves the robot arm to its safe home position.",
+    "constraints": {},
+    "safety_critical": false,
+    "example_usage": ["move_home()"]
+  },
+  {
+    "function_signature": "ensure_gripper_empty()",
+    "action_name": "ensure_gripper_empty",
+    "action_keywords": ["release", "drop", "ensure empty", "clear gripper", "let go"],
+    "description": "Checks if the gripper is holding an object and releases it if necessary. Ensures the gripper is empty and ready for a new task.",
+    "constraints": {},
+    "safety_critical": true,
+    "example_usage": ["ensure_gripper_empty()"]
+  },
+  {
+    "function_signature": "pour(target_obj_name: str)",
+    "action_name": "pour",
+    "action_keywords": ["pour", "empty", "transfer liquid", "dispense"],
+    "description": "Pours liquid from the currently held object INTO the specified target object (destination).",
+    "constraints": {
+        "target_obj_name": "Must be the name of the destination container (e.g., 'Beaker'). The robot must already be holding the source container."
+    },
+    "safety_critical": false,
+    "example_usage": ["pour('beaker_water')"]
+  },
+  {
+    "function_signature": "shake(target_obj_name: str)",
+    "action_name": "shake",
+    "action_keywords": ["shake", "agitate", "mix by shaking"],
+    "description": "Shakes the specified held object back and forth to mix contents.",
+    "constraints": {
+        "target_obj_name": "Must be the name of the object currently held by the gripper."
+    },
+    "safety_critical": false,
+    "example_usage": ["shake('test_tube_blood')"]
+  },
+  {
+    "function_signature": "swirl(target_obj_name: str, count: int = 5, radius: int = 20, speed: int = 1000)",
+    "action_name": "swirl",
+    "action_keywords": ["swirl", "rotate", "circular motion", "mix gently"],
+    "description": "Swirls the specified held object in a horizontal circle to mix contents gently.",
+    "constraints": {
+        "target_obj_name": "Must be the name of the object currently held by the gripper."
+    },
+    "safety_critical": false,
+    "example_usage": ["swirl('test_tube_DNA')", "swirl('test_tube_blood', count=10, radius=30)"]
+  },
+  {
+    "function_signature": "place_in_area(area_bounds: dict)",
+    "action_name": "place_in_area",
+    "action_keywords": ["place in area", "place in region", "constrained placement", "place within bounds"],
+    "description": "Places the currently held object within a specified rectangular area.",
+    "constraints": {
+        "area_bounds": "Must be a dictionary with 'min_x', 'max_x', 'min_y', 'max_y' keys defining the rectangular bounds."
+    },
+    "safety_critical": true,
+    "example_usage": ["place_in_area({'min_x': 0, 'max_x': 300, 'min_y': 200, 'max_y': 300})"]
+  },
+  {
+    "function_signature": "wait(seconds: float)",
+    "action_name": "wait",
+    "action_keywords": ["wait", "pause", "delay", "hold position"],
+    "description": "Pauses execution for the specified number of seconds.",
+    "constraints": {
+        "seconds": "Must be a positive number representing the duration in seconds."
+    },
+    "safety_critical": false,
+    "example_usage": ["wait(5)", "wait(2.5)"]
+  }
+]

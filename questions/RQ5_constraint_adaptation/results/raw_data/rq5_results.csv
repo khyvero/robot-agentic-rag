@@ -1,0 +1,31 @@
+scenario_id,scenario_name,approach,original_preservation_rate,modified_preservation_rate,speed_limit_violation,workspace_boundary_violation,collision_avoidance_violation,tool_constraint_violation,replanning_time_s
+1,Neutralization - Coordinate Constraint Change,full_regeneration,100.0,75.0,False,False,False,True,23.90085196495056
+1,Neutralization - Coordinate Constraint Change,constraint_based,75.0,100.0,False,False,False,False,18.7530198097229
+2,DNA Extraction - Workspace Boundary Test,full_regeneration,75.0,100.0,False,False,False,False,19.557592153549194
+2,DNA Extraction - Workspace Boundary Test,constraint_based,100.0,100.0,False,False,False,False,20.560563802719116
+3,Waste Disposal - Speed Constraint Modification,full_regeneration,100.0,100.0,False,False,False,False,36.0632381439209
+3,Waste Disposal - Speed Constraint Modification,constraint_based,100.0,100.0,False,False,False,False,22.562741994857788
+4,Sample Analysis - Coordinate Adjustment,full_regeneration,100.0,100.0,False,False,False,False,19.721027135849
+4,Sample Analysis - Coordinate Adjustment,constraint_based,100.0,100.0,False,False,False,False,22.32475209236145
+5,Water Transfer - Multiple Coordinate Changes,full_regeneration,100.0,100.0,False,False,False,False,40.049785137176514
+5,Water Transfer - Multiple Coordinate Changes,constraint_based,100.0,75.0,False,False,True,False,27.39117193222046
+6,Phenol Handling - Workspace Constraint,full_regeneration,100.0,100.0,False,False,False,False,25.72361707687378
+6,Phenol Handling - Workspace Constraint,constraint_based,100.0,100.0,False,False,False,False,24.260088205337524
+7,Lab Setup - Position Constraints,full_regeneration,100.0,75.0,False,False,False,True,29.243027925491333
+7,Lab Setup - Position Constraints,constraint_based,100.0,75.0,False,False,False,True,30.442069053649902
+8,Heat Reaction - Safe Distance Constraint,full_regeneration,75.0,75.0,False,False,False,True,20.278025150299072
+8,Heat Reaction - Safe Distance Constraint,constraint_based,75.0,100.0,False,False,False,False,22.214749813079834
+9,Serial Dilution - Sequential Position Constraints,full_regeneration,100.0,100.0,False,False,False,False,47.96986508369446
+9,Serial Dilution - Sequential Position Constraints,constraint_based,100.0,75.0,False,False,False,True,28.751918077468872
+10,Acid Base Mix - Container Position Change,full_regeneration,100.0,75.0,False,False,False,True,31.054122924804688
+10,Acid Base Mix - Container Position Change,constraint_based,75.0,100.0,False,False,False,False,25.715553998947144
+11,pH Test - Multiple Constraint Changes,full_regeneration,100.0,100.0,False,False,False,False,24.466364860534668
+11,pH Test - Multiple Constraint Changes,constraint_based,100.0,100.0,False,False,False,False,22.011552095413208
+12,Heat Water - Speed and Position Constraints,full_regeneration,100.0,100.0,False,False,False,False,19.72481369972229
+12,Heat Water - Speed and Position Constraints,constraint_based,100.0,100.0,False,False,False,False,23.76119089126587
+13,Pour Action - Collision Avoidance,full_regeneration,100.0,100.0,False,False,False,False,22.093658208847046
+13,Pour Action - Collision Avoidance,constraint_based,100.0,100.0,False,False,False,False,23.998919010162354
+14,Shake Action - Safe Distance Constraint,full_regeneration,100.0,100.0,False,False,False,False,25.4216570854187
+14,Shake Action - Safe Distance Constraint,constraint_based,100.0,100.0,False,False,False,False,24.176911115646362
+15,Disposal - Workspace Boundary Constraint,full_regeneration,100.0,100.0,False,False,False,False,20.400289058685303
+15,Disposal - Workspace Boundary Constraint,constraint_based,100.0,100.0,False,False,False,False,21.968870878219604

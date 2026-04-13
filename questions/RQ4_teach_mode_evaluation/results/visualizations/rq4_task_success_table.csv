@@ -1,0 +1,4 @@
+Approach,Valid Task (%),Reusable Task (%),Expert Intervention (%)
+Zero-Shot LLM,5.0%,5.0%,95.0%
+Teach Mode (Proposed),95.0%,95.0%,5.0%
+Improvement,+90.0%,+90.0%,-90.0%

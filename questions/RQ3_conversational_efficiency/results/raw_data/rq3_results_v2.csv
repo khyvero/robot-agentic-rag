@@ -1,0 +1,21 @@
+scenario_id,scenario_name,approach,input_tokens,output_tokens,total_tokens,response_time_s,prompt_length,response_length
+1,Neutralization - Different Final Location,full_regeneration,7776,612,8388,32.93192005157471,78,700
+1,Neutralization - Different Final Location,conversational_refinement,691,379,1070,10.669813871383667,76,1334
+2,DNA Extraction - Skip Blood Disposal,full_regeneration,5644,522,6166,27.657699823379517,59,464
+2,DNA Extraction - Skip Blood Disposal,conversational_refinement,714,348,1062,10.020400047302246,57,1201
+3,Waste Disposal - Partial Disposal,full_regeneration,4374,256,4630,18.489166021347046,85,366
+3,Waste Disposal - Partial Disposal,conversational_refinement,652,205,857,6.2712671756744385,83,681
+4,Sample Analysis - Add Wait Step,full_regeneration,8041,425,8466,26.69931697845459,69,156
+4,Sample Analysis - Add Wait Step,conversational_refinement,682,404,1086,11.61004900932312,67,1404
+5,Water Transfer - Change Final Position,full_regeneration,6316,391,6707,22.933876991271973,76,435
+5,Water Transfer - Change Final Position,conversational_refinement,601,420,1021,11.792511940002441,74,1496
+6,Phenol Handling - Skip Swirl,full_regeneration,8202,589,8791,30.526310920715332,65,305
+6,Phenol Handling - Skip Swirl,conversational_refinement,539,169,708,5.102685928344727,63,576
+7,Lab Setup - Extended Setup,full_regeneration,4726,298,5024,20.209950923919678,55,509
+7,Lab Setup - Extended Setup,conversational_refinement,598,319,917,9.270502805709839,53,1117
+8,Heat Reaction - Different Position,full_regeneration,5541,471,6012,26.75338101387024,69,516
+8,Heat Reaction - Different Position,conversational_refinement,536,202,738,5.975934267044067,67,681
+9,Serial Dilution - Add Shake Step,full_regeneration,8145,649,8794,32.163527965545654,63,377
+9,Serial Dilution - Add Shake Step,conversational_refinement,570,304,874,8.627279043197632,61,1091
+10,Acid Base Mix - Different Container,full_regeneration,8178,765,8943,34.942431926727295,83,618
+10,Acid Base Mix - Different Container,conversational_refinement,692,395,1087,11.254935026168823,81,1402

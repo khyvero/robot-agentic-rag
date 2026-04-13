@@ -1,0 +1,5 @@
+Error Type,Zero-Shot LLM (%),Teach Mode (%)
+Safety Violations,97.4%,100.0%
+API Hallucinations,15.8%,50.0%
+Schema Violations,2.6%,0.0%
+Logical Errors,0.0%,0.0%

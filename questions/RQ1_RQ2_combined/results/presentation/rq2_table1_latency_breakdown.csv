@@ -1,0 +1,5 @@
+Task Category,Average Total Latency,Tests
+Simple Task (Single-step),19.50s,10
+Compound tasks (Multi-step),23.95s,10
+Constrained Task,21.44s,10
+Novel Task,34.15s,10

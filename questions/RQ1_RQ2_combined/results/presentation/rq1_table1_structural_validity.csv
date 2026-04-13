@@ -1,0 +1,4 @@
+Architecture,Invalid JSON (%),Safety Violation (%),API Hallucination (%),Execution Success (%)
+Zero-Shot (Llama 3.8b),2.5,92.5,15.0,5.0
+Single-RAG (Llama 3.8b),0.0,70.0,5.0,27.5
+Dual-RAG (Llama 3.8b),0.0,5.0,2.5,95.0
