@@ -458,9 +458,3 @@ If you use this work in your research, please cite:
 - **Ollama** for local LLM hosting
 - **Anthropic** for Claude and LLM research
 - **Meta** for Llama 3 model
-
----
-
-## Contact
-
-For questions, issues, or contributions, please open an issue on GitHub or contact [your email].
